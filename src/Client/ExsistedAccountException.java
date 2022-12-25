@@ -8,6 +8,16 @@ package Client;
  *
  * @author mac
  */
-public class ExsistedAccountException {
-    
+public class ExsistedAccountException extends Exception {
+
+    public ExsistedAccountException() {
+        super();
+
+    }
+
+    public ExsistedAccountException(String s) {
+
+        super(s);
+
+    }
 }
