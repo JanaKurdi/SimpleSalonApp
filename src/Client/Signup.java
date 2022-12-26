@@ -170,7 +170,7 @@ public class Signup extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(140, 140, 140)
                         .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,6 +264,8 @@ public class Signup extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Passwords do NOT match");
             return;
         }
+       new Services().setVisible(true);
+       this.setVisible(false);
         
     }//GEN-LAST:event_signupActionPerformed
 
