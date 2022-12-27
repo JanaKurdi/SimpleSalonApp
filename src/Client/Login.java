@@ -32,7 +32,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         FName = new javax.swing.JTextField();
         FName1 = new javax.swing.JTextField();
-        signup = new javax.swing.JButton();
+        login = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         SignUp = new javax.swing.JButton();
 
@@ -63,11 +63,11 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        signup.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        signup.setText("Login");
-        signup.addActionListener(new java.awt.event.ActionListener() {
+        login.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        login.setText("Login");
+        login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signupActionPerformed(evt);
+                loginActionPerformed(evt);
             }
         });
 
@@ -95,7 +95,7 @@ public class Login extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 32, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel11))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(SignUp)))
@@ -124,7 +124,7 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(signup)
+                .addComponent(login)
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
@@ -154,7 +154,7 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FName1ActionPerformed
 
-    private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
 //        String firstName = FName.getText();
 //        String lastName = LName.getText();
@@ -174,7 +174,7 @@ public class Login extends javax.swing.JFrame {
 //        }
        new Services().setVisible(true);
        this.setVisible(false); 
-    }//GEN-LAST:event_signupActionPerformed
+    }//GEN-LAST:event_loginActionPerformed
 
     private void SignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpActionPerformed
         // TODO add your handling code here:
@@ -226,6 +226,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton signup;
+    private javax.swing.JButton login;
     // End of variables declaration//GEN-END:variables
 }
