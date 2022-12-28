@@ -335,7 +335,7 @@ public class Signup extends javax.swing.JFrame {
 
     
     private boolean allDataValid(String FName,String LName,String pass, String confirmPass,String PhoneNo,String email,String address) {
-        return !(FName.isEmpty() || LName.isEmpty() || pass.isEmpty() || confirmPass.isEmpty() || email.isEmpty() || address.isEmpty()  );
+        return !(FName.isEmpty() || LName.isEmpty() || pass.isEmpty() || confirmPass.isEmpty() || PhoneNo.isEmpty()||email.isEmpty() || address.isEmpty()  );
     }
 }
   

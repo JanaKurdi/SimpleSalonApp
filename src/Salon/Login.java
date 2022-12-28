@@ -4,6 +4,8 @@
  */
 package Salon;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author mac
@@ -30,8 +32,8 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        FName = new javax.swing.JTextField();
-        FName1 = new javax.swing.JTextField();
+        pass = new javax.swing.JTextField();
+        PhoneNo = new javax.swing.JTextField();
         login = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         SignUp = new javax.swing.JButton();
@@ -49,17 +51,17 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel4.setText("Password");
 
-        FName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204), 2));
-        FName.addActionListener(new java.awt.event.ActionListener() {
+        pass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204), 2));
+        pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FNameActionPerformed(evt);
+                passActionPerformed(evt);
             }
         });
 
-        FName1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204), 2));
-        FName1.addActionListener(new java.awt.event.ActionListener() {
+        PhoneNo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204), 2));
+        PhoneNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FName1ActionPerformed(evt);
+                PhoneNoActionPerformed(evt);
             }
         });
 
@@ -90,8 +92,8 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(FName1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FName, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(PhoneNo, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pass, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 32, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -118,11 +120,11 @@ public class Login extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FName1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(login)
                 .addGap(40, 40, 40)
@@ -146,32 +148,24 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void FNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FNameActionPerformed
+    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FNameActionPerformed
+    }//GEN-LAST:event_passActionPerformed
 
-    private void FName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FName1ActionPerformed
+    private void PhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FName1ActionPerformed
+    }//GEN-LAST:event_PhoneNoActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
-//        String firstName = FName.getText();
-//        String lastName = LName.getText();
-//        String password = pass.getText();
-//        String confirmPassword = confirmPass.getText();
-//        String phoneNumber=PhoneNo.getText();
-//        String Email = email.getText();
-//        String Address = address.getText();
-//
-//        if (!allDataValid(firstName,lastName,password,confirmPassword,phoneNumber,Email,Address)) {
-//            JOptionPane.showMessageDialog(null, "All the fields cannot be empty,please try to fill all the information again");
-//            return;
-//        }
-//        if (!password.equals(confirmPassword)) {
-//            JOptionPane.showMessageDialog(null, "Passwords do NOT match");
-//            return;
-//        }
+        String phoneNumber=PhoneNo.getText();
+        String password = pass.getText();
+       
+        if (!allDataValid(phoneNumber,password)) {
+            JOptionPane.showMessageDialog(null, "All the fields cannot be empty,please try to fill all the information again");
+            return;
+        }
+       
        new Services().setVisible(true);
        this.setVisible(false); 
     }//GEN-LAST:event_loginActionPerformed
@@ -218,8 +212,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField FName;
-    private javax.swing.JTextField FName1;
+    private javax.swing.JTextField PhoneNo;
     private javax.swing.JButton SignUp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
@@ -227,5 +220,16 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton login;
+    private javax.swing.JTextField pass;
     // End of variables declaration//GEN-END:variables
+
+    
+     private boolean allDataValid(String PhoneNo,String pass) {
+        return !( PhoneNo.isEmpty()|| pass.isEmpty());
+    }
+
+
+
+
+
 }
