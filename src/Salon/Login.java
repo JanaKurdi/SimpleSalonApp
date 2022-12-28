@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Client;
+package Salon;
 
 /**
  *
@@ -44,7 +44,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setText("Welcome to home spa");
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jLabel3.setText("PhoneNumber");
+        jLabel3.setText("Phone Number");
 
         jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel4.setText("Password");

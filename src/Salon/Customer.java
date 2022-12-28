@@ -1,4 +1,4 @@
-package Client;
+package Salon;
 
 public class Customer {
 
