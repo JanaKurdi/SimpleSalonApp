@@ -28,6 +28,7 @@ public class Signup extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -45,7 +46,11 @@ public class Signup extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         signup = new javax.swing.JButton();
         login = new javax.swing.JButton();
-        username = new javax.swing.JLabel();
+        Lname = new javax.swing.JLabel();
+        FName = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+
+        jLabel3.setText("jLabel3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,6 +76,11 @@ public class Signup extends javax.swing.JFrame {
         jLabel6.setText("Confirm password");
 
         pass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204), 2));
+        pass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passActionPerformed(evt);
+            }
+        });
 
         confirmPass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204), 2));
         confirmPass.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +127,18 @@ public class Signup extends javax.swing.JFrame {
             }
         });
 
-        username.setText("username");
+        Lname.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        Lname.setText("Last Name");
+
+        FName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204), 2));
+        FName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FNameActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jLabel4.setText("First Name");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -137,24 +158,26 @@ public class Signup extends javax.swing.JFrame {
                         .addGap(99, 99, 99)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(77, 77, 77)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(LName)
                                 .addComponent(pass)
                                 .addComponent(confirmPass)
                                 .addComponent(PhoneNo)
                                 .addComponent(email)
-                                .addComponent(address, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE))
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(username)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(address, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel7)
+                                .addComponent(jLabel8)
+                                .addComponent(jLabel9)
+                                .addComponent(Lname)
+                                .addComponent(LName)
+                                .addComponent(FName)))))
                 .addContainerGap(55, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -164,8 +187,12 @@ public class Signup extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
-                .addGap(100, 100, 100)
-                .addComponent(username)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Lname)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -226,23 +253,33 @@ public class Signup extends javax.swing.JFrame {
     private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
         // TODO add your handling code here:
 
-        String Username = username.getText();
+        String Fname = FName.getText();
+        String Lname = LName.getText();
         String password = pass.getText();
         String confirmPassword = confirmPass.getText();
         String phoneNumber = PhoneNo.getText();
         String Email = email.getText();
         String Address = address.getText();
 
-        if (!allDataValid(Username, password, confirmPassword, phoneNumber, Email, Address)) {
+        if (!allDataValid(Fname, Lname, password, confirmPassword, phoneNumber, Email, Address)) {
             JOptionPane.showMessageDialog(null, "All the fields cannot be empty,please try to fill all the information again");
             return;
         }
         if (!password.equals(confirmPassword)) {
+            
             JOptionPane.showMessageDialog(null, "Passwords do NOT match");
             return;
-        }
-        new Services().setVisible(true);
-        this.setVisible(false);
+
+        } 
+        //try {
+              Customer customer =  new Customer();
+             // customer.createAccount(Fname, Lname, password, phoneNumber, Email, Address);
+               
+          //  } catch (ExsistedAccountException e) {
+                //JOptionPane.showMessageDialog(null, "YOU ARE ALREADY HAVE AN ACCOUNT");
+           // }
+         new Services().setVisible(true);
+                 this.setVisible(false);
 
     }//GEN-LAST:event_signupActionPerformed
 
@@ -251,6 +288,14 @@ public class Signup extends javax.swing.JFrame {
         new Login().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_loginActionPerformed
+
+    private void FNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FNameActionPerformed
+
+    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passActionPerformed
 
     /**
      * @param args the command line arguments
@@ -288,7 +333,9 @@ public class Signup extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField FName;
     private javax.swing.JTextField LName;
+    private javax.swing.JLabel Lname;
     private javax.swing.JTextField PhoneNo;
     private javax.swing.JTextField address;
     private javax.swing.JPasswordField confirmPass;
@@ -296,6 +343,8 @@ public class Signup extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -305,10 +354,9 @@ public class Signup extends javax.swing.JFrame {
     private javax.swing.JButton login;
     private javax.swing.JPasswordField pass;
     private javax.swing.JButton signup;
-    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 
-    private boolean allDataValid(String username, String pass, String confirmPass, String PhoneNo, String email,String address) {
-        return !(username.isEmpty() || pass.isEmpty() || confirmPass.isEmpty() || PhoneNo.isEmpty() || email.isEmpty() || address.isEmpty());
+    private boolean allDataValid(String FName, String LName, String pass, String confirmPass, String PhoneNo, String email, String address) {
+        return !(FName.isEmpty() || LName.isEmpty() || pass.isEmpty() || confirmPass.isEmpty() || PhoneNo.isEmpty() || email.isEmpty() || address.isEmpty());
     }
 }

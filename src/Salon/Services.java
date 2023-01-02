@@ -4,16 +4,16 @@
  */
 package Salon;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author noorbabahr
  */
 public class Services extends javax.swing.JFrame {
 
-
-
     /**
-     * Creates new form Servic
+     * Creates new form Service
      */
     public Services() {
         initComponents();
@@ -34,16 +34,16 @@ public class Services extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        hairDye = new javax.swing.JCheckBox();
+        hairCut = new javax.swing.JCheckBox();
+        hairStyle = new javax.swing.JCheckBox();
+        hairTreatment = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        manicure = new javax.swing.JCheckBox();
+        pedicure = new javax.swing.JCheckBox();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
@@ -64,40 +64,40 @@ public class Services extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 204, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jCheckBox3.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jCheckBox3.setText("Hair dye                          500  sr");
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+        hairDye.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        hairDye.setText("Hair dye                          500  sr");
+        hairDye.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
+                hairDyeActionPerformed(evt);
             }
         });
 
-        jCheckBox2.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jCheckBox2.setText("Hair cut                          150  sr");
-        jCheckBox2.addChangeListener(new javax.swing.event.ChangeListener() {
+        hairCut.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        hairCut.setText("Hair cut                          150  sr");
+        hairCut.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jCheckBox2StateChanged(evt);
+                hairCutStateChanged(evt);
             }
         });
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        hairCut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox4.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jCheckBox4.setText("Hair style                        1000 sr");
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
+                hairCutActionPerformed(evt);
             }
         });
 
-        jCheckBox1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jCheckBox1.setText("Hair Treatment                300  sr");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        hairStyle.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        hairStyle.setText("Hair style                        1000 sr");
+        hairStyle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                hairStyleActionPerformed(evt);
+            }
+        });
+
+        hairTreatment.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        hairTreatment.setText("Hair Treatment                300  sr");
+        hairTreatment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hairTreatmentActionPerformed(evt);
             }
         });
 
@@ -114,15 +114,15 @@ public class Services extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox4)
+                    .addComponent(hairTreatment)
+                    .addComponent(hairStyle)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(jLabel2)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel3))
-                        .addComponent(jCheckBox2))
-                    .addComponent(jCheckBox3))
+                        .addComponent(hairCut))
+                    .addComponent(hairDye))
                 .addContainerGap(91, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -133,13 +133,13 @@ public class Services extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox2)
+                .addComponent(hairCut)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox4)
+                .addComponent(hairStyle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox3)
+                .addComponent(hairDye)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox1)
+                .addComponent(hairTreatment)
                 .addGap(14, 14, 14))
         );
 
@@ -149,11 +149,11 @@ public class Services extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel4.setText("Nails");
 
-        jCheckBox5.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jCheckBox5.setText("Manicure                         200 sr");
+        manicure.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        manicure.setText("Manicure                         200 sr");
 
-        jCheckBox6.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jCheckBox6.setText("Pedicure                          200 sr");
+        pedicure.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        pedicure.setText("Pedicure                          200 sr");
 
         jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel5.setText("price");
@@ -165,13 +165,13 @@ public class Services extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox6)
+                    .addComponent(pedicure)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addComponent(jLabel4)
                             .addGap(142, 142, 142)
                             .addComponent(jLabel5))
-                        .addComponent(jCheckBox5)))
+                        .addComponent(manicure)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -182,13 +182,13 @@ public class Services extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox5)
+                .addComponent(manicure)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox6)
+                .addComponent(pedicure)
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
-        jButton1.setText("next");
+        jButton1.setText("Next");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -251,33 +251,38 @@ public class Services extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void hairTreatmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hairTreatmentActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_hairTreatmentActionPerformed
 
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+    private void hairDyeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hairDyeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
+    }//GEN-LAST:event_hairDyeActionPerformed
 
-    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+    private void hairStyleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hairStyleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox4ActionPerformed
+    }//GEN-LAST:event_hairStyleActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    private void hairCutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hairCutActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    }//GEN-LAST:event_hairCutActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new Confirm().setVisible(true);
-        this.setVisible(false);
-        
+        if (!(hairCut.isSelected() || hairDye.isSelected() || hairStyle.isSelected() || hairTreatment.isSelected() || manicure.isSelected() || pedicure.isSelected())) {
+            JOptionPane.showMessageDialog(null, "You have to choose one service at least");
+        } else {
+
+            JOptionPane.showMessageDialog(null, "YOUR SERVICE IS CONFIRMED,THAK YOU FOR CHOOSING US");
+            System.exit(0);
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jCheckBox2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBox2StateChanged
+    private void hairCutStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_hairCutStateChanged
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jCheckBox2StateChanged
+
+    }//GEN-LAST:event_hairCutStateChanged
 
     /**
      * @param args the command line arguments
@@ -318,14 +323,12 @@ public class Services extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JCheckBox hairCut;
+    private javax.swing.JCheckBox hairDye;
+    private javax.swing.JCheckBox hairStyle;
+    private javax.swing.JCheckBox hairTreatment;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -334,5 +337,7 @@ public class Services extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JCheckBox manicure;
+    private javax.swing.JCheckBox pedicure;
     // End of variables declaration//GEN-END:variables
 }

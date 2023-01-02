@@ -1,37 +1,31 @@
 package Salon;
 
-import java.io.IOException;
 
 public class Customer {
 
-    String username;
+    String PhoneNo;
     String email;
 
     public Customer() {
 
     }
 
-    public Customer(String username, String email) {
-        this.username = username;
+    public Customer(String PhoneNo, String email) {
+        this.PhoneNo = PhoneNo;
         this.email = email;
     }
 
-    public Customer createAccount(String username, String password, String repassword, String phonrnumber, String Email, String address) throws ExsistedAccountException, IOException {
-//        DB db = new DB();
-        IOFile fileDB = new IOFile();
-        if (db.checkifExist(username) || fileDB.checkifExist(username)) {
+    public Customer createAccount(String FName, String LName, String password, String PhoneNo, String Email, String address) throws ExsistedAccountException {
+        IOFile file = new IOFile();
+        if (file.checkExistence(PhoneNo)) {
             throw new ExsistedAccountException();
         }
+        file.createAccount(FName, LName, password, PhoneNo, Email, address);
+        return getCustomer(PhoneNo, password);
 
-        db.createAccount(username, password, repassword, phonrnumber, Email, address);
-        fileDB.createAccount(username, password, repassword, phonrnumber, Email, address);
-
-        return getCustomer(phonrnumber, password);
-     
     }
 
-    public static Customer getCustomer(String username, String pass) {
-        DB db = new DB();
-        return db.getStudent(username, pass);
+    public static Customer getCustomer(String PhoneNo, String pass) {
+       return Customer.getCustomer(PhoneNo, pass);
     }
 }
