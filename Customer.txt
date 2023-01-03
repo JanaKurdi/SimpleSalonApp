@@ -1,4 +1,1 @@
-renad,1234567,1234567,0500560751,renad234@gmail.com,almanar zead bin saad 707renad,1234567,1234567,0500560751,renad234@gmail.com,almanar zead bin saad 707
-renad,1234567,1234567,0500560751,renad234@gmail.com,almanar zead bin saad 707
-renad,Ghaleb,1234567,0500560751,renad234@gmail.com,almanar zead bin saad 707
-renad,Ghaleb,1234567,0500560751,renad234@gmail.com,almanar zead bin saad 707
+rr,rr,rr,rr,rr,rr

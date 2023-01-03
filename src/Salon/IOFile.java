@@ -1,9 +1,9 @@
 package Salon;
 
+import Salon.Customer;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -14,9 +14,9 @@ public class IOFile {
 
     public boolean checkExistence(String PhoneNo) {
         try {
-            FileReader fr = new FileReader(new File("Customer.txt"));
-            while (fr.ready()) {
-                String[] line = fr.toString().split(",");
+            Scanner inputfile = new Scanner(new File("Customer.txt"));
+            while (inputfile.hasNext()) {
+                String[] line = inputfile.nextLine().split(",");
                 if (line[0].equals(PhoneNo)) {
                     return true;
                 }
@@ -43,16 +43,18 @@ public class IOFile {
 
     }
 
-    public boolean createAccount(String FName, String LName ,String password, String PhoneNo, String Email, String address)  {
-        try {
-            try (PrintWriter pw = new PrintWriter(new FileOutputStream(new File("Customer.txt"), true))) {
-                pw.println(FName + "," + LName + "," + password + "," + PhoneNo + "," + Email + "," + address);
-            }
-            return true;
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(IOFile.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
-        }
-    }
+//    public boolean createAccount(String FName, String LName, String password, String PhoneNo, String Email, String address) {
+//        try {
+//            PrintWriter pw = new PrintWriter(new FileOutputStream(new File("Customer.txt"), true));
+//            pw.println(FName + "," + LName + "," + password + "," + PhoneNo + "," + Email + "," + address);
+//            pw.close();
+//            return true;
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(IOFile.class.getName()).log(Level.SEVERE, null, ex);
+//            return false;
+//        }
+//    }
 
+    
+    
 }
