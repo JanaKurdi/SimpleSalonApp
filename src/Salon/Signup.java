@@ -270,26 +270,15 @@ public class Signup extends javax.swing.JFrame {
             return;
 
         }
-
         try {
-            PrintWriter pw = new PrintWriter(new FileOutputStream(new File("Customer.txt"), true));
-            pw.println(Fname + "," + Lname + "," + password + "," + phoneNumber + "," + Email + "," + Address);
-            pw.close();
-        } catch (FileNotFoundException ex) {
+            Customer.createAccount(Fname, Lname, password, phoneNumber, Email, Address);
+        } catch (ExsistedAccountException e) {
+            JOptionPane.showMessageDialog(null, "YOU ARE ALREADY HAVE AN ACCOUNT");
+            return;
         }
         new Services().setVisible(true);
         this.setVisible(false);
-        
-        // the old one
-//        //try {
-//	Customer customer = new Customer();
-//	// customer.createAccount(Fname, Lname, password, phoneNumber, Email, Address);
-//	
-//	// } catch (ExsistedAccountException e) {
-//	//JOptionPane.showMessageDialog(null, "YOU ARE ALREADY HAVE AN ACCOUNT");
-//	// }
-//	new Services().setVisible(true);
-//	this.setVisible(false);
+
 
     }//GEN-LAST:event_signupActionPerformed
 

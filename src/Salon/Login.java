@@ -157,11 +157,11 @@ public class Login extends javax.swing.JFrame {
             return;
         }
 
-//          Customer customer =Customer.getCustomer(phoneNumber, password);
-//        if (customer == null) {
-//            JOptionPane.showMessageDialog(null, "Wrong phone number or Password");
-//            return;
-//        }
+          Customer customer =Customer.getCustomer(phoneNumber, password);
+        if (customer == null) {
+            JOptionPane.showMessageDialog(null, "the phone number or password is incorrect");
+            return;
+        }
         new Services().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_loginActionPerformed

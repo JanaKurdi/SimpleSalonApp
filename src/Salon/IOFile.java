@@ -1,14 +1,10 @@
 package Salon;
 
-import Salon.Customer;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class IOFile {
 
@@ -43,17 +39,6 @@ public class IOFile {
 
     }
 
-//    public boolean createAccount(String FName, String LName, String password, String PhoneNo, String Email, String address) {
-//        try {
-//            PrintWriter pw = new PrintWriter(new FileOutputStream(new File("Customer.txt"), true));
-//            pw.println(FName + "," + LName + "," + password + "," + PhoneNo + "," + Email + "," + address);
-//            pw.close();
-//            return true;
-//        } catch (FileNotFoundException ex) {
-//            Logger.getLogger(IOFile.class.getName()).log(Level.SEVERE, null, ex);
-//            return false;
-//        }
-//    }
 
     
     
