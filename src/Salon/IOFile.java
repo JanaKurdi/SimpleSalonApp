@@ -13,7 +13,7 @@ public class IOFile {
             Scanner inputfile = new Scanner(new File("Customer.txt"));
             while (inputfile.hasNext()) {
                 String[] line = inputfile.nextLine().split(",");
-                if (line[0].equals(PhoneNo)) {
+                if (line[3].equals(PhoneNo)) {
                     return true;
                 }
             }
@@ -29,8 +29,8 @@ public class IOFile {
             Scanner inputfile = new Scanner(new File("Customer.txt"));
             while (inputfile.hasNext()) {
                 String[] line = inputfile.nextLine().split(",");
-                if (line[1].equals(password) && line[3].equals(PhoneNo)) {
-                    return new Customer(line[1], line[3]);
+                if (line[2].equals(password) && line[3].equals(PhoneNo)) {
+                    return new Customer(line[2], line[3]);
                 }
             }
         } catch (FileNotFoundException e) {
