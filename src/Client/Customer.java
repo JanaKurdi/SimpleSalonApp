@@ -1,4 +1,4 @@
-package Salon;
+package Client;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -6,7 +6,7 @@ import java.io.FileOutputStream;
 import java.io.PrintWriter;
 
 public class Customer {
-
+    String FName;
     String PhoneNo;
     String email;
 
@@ -17,6 +17,14 @@ public class Customer {
     public Customer(String PhoneNo, String email) {
         this.PhoneNo = PhoneNo;
         this.email = email;
+    }
+
+    public String getFName() {
+        return FName;
+    }
+
+    public void setFName(String FName) {
+        this.FName = FName;
     }
 
     public String getPhoneNo() {

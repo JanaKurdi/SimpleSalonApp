@@ -1,4 +1,4 @@
-package Salon;
+package Client;
 
 import java.io.File;
 import java.io.FileNotFoundException;

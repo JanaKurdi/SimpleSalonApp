@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Salon;
+package Client;
 
 import javax.swing.JOptionPane;
 
@@ -159,7 +159,7 @@ public class Login extends javax.swing.JFrame {
 
           Customer customer =Customer.getCustomer(phoneNumber, password);
         if (customer == null) {
-            JOptionPane.showMessageDialog(null, "the phone number or password is incorrect");
+            JOptionPane.showMessageDialog(null, "The phone number or password is incorrect");
             return;
         }
         new Services().setVisible(true);
