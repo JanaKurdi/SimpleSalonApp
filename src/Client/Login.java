@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Client;
 
 import javax.swing.JOptionPane;
@@ -11,7 +8,7 @@ import javax.swing.JOptionPane;
  * @author mac
  */
 public class Login extends javax.swing.JFrame {
-
+  private static Customer customer;
     /**
      * Creates new form Login
      */
@@ -157,12 +154,12 @@ public class Login extends javax.swing.JFrame {
             return;
         }
 
-          Customer customer =Customer.getCustomer(phoneNumber, password);
+         customer =Customer.getCustomer(phoneNumber, password);
         if (customer == null) {
             JOptionPane.showMessageDialog(null, "The phone number or password is incorrect");
             return;
         }
-        new Services().setVisible(true);
+        new Services(customer).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_loginActionPerformed
 

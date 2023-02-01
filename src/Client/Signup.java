@@ -15,7 +15,6 @@ import javax.swing.JOptionPane;
  * @author mac
  */
 public class Signup extends javax.swing.JFrame {
-
     /**
      * Creates new form Signup
      */
@@ -276,10 +275,8 @@ public class Signup extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "YOU ARE ALREADY HAVE AN ACCOUNT");
             return;
         }
-        new Services().setVisible(true);
+        new Services(Customer.getCustomer(phoneNumber, password)).setVisible(true);
         this.setVisible(false);
-
-
     }//GEN-LAST:event_signupActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed

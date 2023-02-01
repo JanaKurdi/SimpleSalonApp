@@ -1,4 +1,4 @@
 Jana,Kurdi,Jana,0551249415,jana@outlook.com,alshati
-Reand,Ghaleb,Renad,0500560751,Renad@gmail.com,Almanar
+Renad,Ghaleb,Renad,0500560751,Renad@gmail.com,Almanar
 Razan,Alshaikh,Razan,0549226961,Razan@hotmail.com,Alhamadaniyyah
 Noor,Babahr,Noor,0509447216,Noor@outlook.com,noor

@@ -30,13 +30,12 @@ public class IOFile {
             while (inputfile.hasNext()) {
                 String[] line = inputfile.nextLine().split(",");
                 if (line[2].equals(password) && line[3].equals(PhoneNo)) {
-                    return new Customer(line[2], line[3]);
+                    return new Customer(line[2], line[3], line[0]);
                 }
             }
         } catch (FileNotFoundException e) {
         }
         return null;
-
     }
 
 
