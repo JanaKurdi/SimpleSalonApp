@@ -16,8 +16,8 @@ import java.net.Socket;
 public class serverWindow extends javax.swing.JFrame {
 
     private String ClientName = " ";
-    Socket client;
-    ThreadedHandlerServer ThreadedHandlerServer;
+    private Socket client;
+    private ThreadedHandlerServer ThreadedHandlerServer;
 
     public serverWindow(Socket client) {
         this.client = client;
@@ -136,44 +136,12 @@ public class serverWindow extends javax.swing.JFrame {
             return;
         }
         ThreadedHandlerServer.sendMessage(text);
-        ServerArea.append("Server Says: " + text + "\n"); 
+        ServerArea.append("Server Says: " + text + "\n");
         Message.setText("");
 
     }//GEN-LAST:event_SendButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
 
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(serverWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(serverWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(serverWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(serverWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-
-        try (ServerSocket s = new ServerSocket(8189)) {
-            System.out.println("Server started waiting for clients !!");
-            while (true) {
-                Socket client = s.accept();
-                new serverWindow(client).setVisible(true);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
 
     public void addClientText(String text) {
         ServerArea.append(ClientName + ": " + text + "\n");

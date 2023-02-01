@@ -12,53 +12,53 @@ import java.util.Scanner;
  */
 public class ThreadedHandlerServer implements Runnable {
 
-        private Socket client;
-        private PrintWriter Out;
-        private serverWindow serverWindow;
-        private boolean done = false;
+    private Socket client;
+    private PrintWriter Out;
+    private serverWindow serverWindow;
+    private boolean done = false;
 
-        public ThreadedHandlerServer(Socket client, serverWindow serverWindow) {
-            this.client = client;
-            this.serverWindow = serverWindow;
-        }
+    public ThreadedHandlerServer(Socket client, serverWindow serverWindow) {
+        this.client = client;
+        this.serverWindow = serverWindow;
+    }
 
-        public void run() {
+    public void run() {
 
-            try {
-                InputStream inStream = client.getInputStream();
-                OutputStream outStream = client.getOutputStream();
-                Scanner sc = new Scanner(inStream);
-                Out = new PrintWriter(outStream, true);
+        try {
+            InputStream inStream = client.getInputStream();
+            OutputStream outStream = client.getOutputStream();
+            Scanner sc = new Scanner(inStream);
+            Out = new PrintWriter(outStream, true);
 
-                Out.println("Dear Customer we are hear to help you! "
-                        + "Please let us know if there's anything we can help you with "
-                        + "or  Enter BYE to exit.");
+            Out.println("Dear Customer we are hear to help you! "
+                    + "Please let us know if there's anything we can help you with "
+                    + "or  Enter BYE to exit.");
 
-                while (!done) {
-                    String text = sc.nextLine();
-                    System.out.println(text);
-                    if (text.startsWith("Name")) {
-                        serverWindow.setClientName(text.split(";")[1]);
-                    } else if (text.trim().equalsIgnoreCase("BYE")) {
-                        serverWindow.dispose();
-                        break;
-                    } else {
-                        serverWindow.addClientText(text);
-                    }
+            while (!done) {
+                String text = sc.nextLine();
+                System.out.println(text);
+                if (text.startsWith("Name")) {
+                    serverWindow.setClientName(text.split(";")[1]);
+                } else if (text.trim().equalsIgnoreCase("BYE")) {
+                    serverWindow.dispose();
+                    break;
+                } else {
+                    serverWindow.addClientText(text);
                 }
-                client.close();
-            } catch (Exception e) {
-
-                return;
             }
+            client.close();
+        } catch (Exception e) {
 
+            return;
         }
 
-        public void sendMessage(String text) {
-            Out.println(text);
-            if (text.trim().equalsIgnoreCase("bye")) {
-                done = true;
-                serverWindow.dispose();
-            }
+    }
+
+    public void sendMessage(String text) {
+        Out.println(text);
+        if (text.trim().equalsIgnoreCase("bye")) {
+            done = true;
+            serverWindow.dispose();
         }
     }
+}
