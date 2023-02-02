@@ -22,9 +22,9 @@ public class clientWindow extends javax.swing.JFrame {
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "server is not connected please try again");
             return;
-        };
-        this.customer = customer;  
-        
+        }
+        this.customer = customer;
+
     }
 
     /**
@@ -156,7 +156,8 @@ public class clientWindow extends javax.swing.JFrame {
             return;
         }
         ThreadedHandlerClinet.sendMessage(text);
-        ClientArea.append("Client Says: " + text + "\n");
+        String client = customer.getFName();
+        ClientArea.append(client + " Says: " + text + "\n");
         message.setText("");
     }//GEN-LAST:event_sendButtonActionPerformed
 

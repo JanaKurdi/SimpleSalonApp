@@ -36,7 +36,6 @@ public class ThreadedHandlerClinet implements Runnable {
                 String text = sc.nextLine();
                 if (text.trim().equalsIgnoreCase("BYE")) {
                     done = true;
-                    clientWindow.dispose();
                 }
                 clientWindow.addServerText(text);
             }
@@ -48,7 +47,6 @@ public class ThreadedHandlerClinet implements Runnable {
     }
 
     public void sendMessage(String text) {
-
         Out.println(text);
         if (text.trim().equalsIgnoreCase("BYE")) {
             done = true;

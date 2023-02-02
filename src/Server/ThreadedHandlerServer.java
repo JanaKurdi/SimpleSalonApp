@@ -35,15 +35,12 @@ public class ThreadedHandlerServer implements Runnable {
             Out.println("Dear Customer we are hear to help you! "
                     + "Please let us know if there's anything "
                     + "we can help you with or  Enter BYE to exit.");
-
+           
             while (!done) {
                 String text = sc.nextLine();
                 System.out.println(text);
                 if (text.startsWith("Name")) {
                     serverWindow.setClientName(text.split(";")[1]);
-                } else if (text.trim().equalsIgnoreCase("BYE")) {
-                    serverWindow.dispose();
-                    break;
                 } else {
                     serverWindow.addClientText(text);
                 }
@@ -60,7 +57,6 @@ public class ThreadedHandlerServer implements Runnable {
         Out.println(text);
         if (text.trim().equalsIgnoreCase("bye")) {
             done = true;
-            serverWindow.dispose();
         }
     }
 }

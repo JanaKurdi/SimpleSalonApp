@@ -9,8 +9,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
@@ -183,7 +182,8 @@ public class ShowAllCustomersUsingDB extends javax.swing.JFrame {
 public String printToTextArea() throws SQLException {
         String CustomersInfo=" ";
         try (ResultSet rs = stat.executeQuery("SELECT * FROM Customers")) {
-            int i=0;
+            int i=1;
+            
             while (rs.next()) {
                 CustomersInfo += "Customer("+i+"): ";
                 CustomersInfo += "Phone number: " + rs.getString("PhoneNo") + ", \n";
@@ -195,7 +195,7 @@ public String printToTextArea() throws SQLException {
                 CustomersInfo += "#################\n";
                 i++;
             }
-            CustomersInfo+= " YOU HAVE  "+ i +" CUSTOMERS! ";
+            CustomersInfo+= " YOU HAVE  "+ --i +" CUSTOMERS! ";
         }
         return CustomersInfo;
     }

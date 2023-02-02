@@ -17,7 +17,7 @@ public class serverWindow extends javax.swing.JFrame {
 
     private String ClientName = " ";
     private Socket client;
-    private   ThreadedHandlerServer  ThreadedHandlerServer;
+    private ThreadedHandlerServer  ThreadedHandlerServer;
     
     public serverWindow(Socket client) {
         this.client = client;
