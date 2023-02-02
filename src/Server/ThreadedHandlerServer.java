@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -20,6 +21,7 @@ public class ThreadedHandlerServer implements Runnable {
     public ThreadedHandlerServer(Socket client, serverWindow serverWindow) {
         this.client = client;
         this.serverWindow = serverWindow;
+
     }
 
     public void run() {
@@ -31,8 +33,8 @@ public class ThreadedHandlerServer implements Runnable {
             Out = new PrintWriter(outStream, true);
 
             Out.println("Dear Customer we are hear to help you! "
-                    + "Please let us know if there's anything we can help you with "
-                    + "or  Enter BYE to exit.");
+                    + "Please let us know if there's anything "
+                    + "we can help you with or  Enter BYE to exit.");
 
             while (!done) {
                 String text = sc.nextLine();
