@@ -10,7 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
 /**
  *
  * @author Razan Alshaikh
@@ -116,6 +115,7 @@ public class ShowAllCustomersUsingDB extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
+            
             String text = printToTextArea();
 
             if (text.isEmpty()) {
@@ -144,26 +144,13 @@ public class ShowAllCustomersUsingDB extends javax.swing.JFrame {
         String URL = "jdbc:mysql://localhost:3306/salonapp?useSSL=false";
         String USERNAME = "C3A_3";
         String PASSWORD = "RJD@12345";
+        Database db = new Database();
         try {
             conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-            stat = conn.createStatement();
-            stat.executeUpdate("DROP TABLE customers");
-            String creatTable = "CREATE TABLE customers( "
-                    + " PhoneNo INT NOT NULL, "
-                    + " password VARCHAR(45) NOT NULL, "
-                    + "Fname VARCHAR(50) NOT NULL, "
-                    + "Lname VARCHAR(50) NULL, "
-                    + " address VARCHAR(50) NULL,"
-                    + "email VARCHAR(50) NOT NULL,"
-                    + "PRIMARY KEY (PhoneNo))";
-            stat.executeUpdate(creatTable);
-            String insertData = "INSERT INTO customers("
-                    + "PhoneNo, password, Fname,Lname,address,email) VALUES "
-                    + "('0549226961','Razan', 'Razan','Alshaikh','Alhamadaniyyah','Razan@hotmail.com'), "
-                    + "('0551249415','Jana', 'Jana','Kurdi','alshati','jana@outlook.com'), "
-                    + "('0500560751', 'Renad', 'Renad','Ghaleb','Almanar','Renad@gmail.com'), "
-                    + "('0509447216', 'Noor', 'Noor','Babahr','noor','Noor@outlook.com')";
-            stat.executeUpdate(insertData);
+          //  int d = db.dropTable();
+           // db.creatTable();
+          // stat = conn.createStatement();
+         
 
         } catch (Exception e) {
             System.out.println(" " + e.getMessage());
@@ -180,12 +167,13 @@ public class ShowAllCustomersUsingDB extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 public String printToTextArea() throws SQLException {
-        String CustomersInfo=" ";
-        try (ResultSet rs = stat.executeQuery("SELECT * FROM Customers")) {
-            int i=1;
-            
-            while (rs.next()) {
-                CustomersInfo += "Customer("+i+"): ";
+        Database db = new Database();
+        String CustomersInfo = " ";
+        try ( ResultSet rs = db.ShowAllRecords()) {
+            int i = 1;
+
+         while (rs.next()) {
+                CustomersInfo += "Customer(" + i + "): ";
                 CustomersInfo += "Phone number: " + rs.getString("PhoneNo") + ", \n";
                 CustomersInfo += "First name: " + rs.getString("Fname") + ", \n";
                 CustomersInfo += "Last name: " + rs.getString("Lname") + ", \n";
@@ -195,7 +183,7 @@ public String printToTextArea() throws SQLException {
                 CustomersInfo += "#################\n";
                 i++;
             }
-            CustomersInfo+= " YOU HAVE  "+ --i +" CUSTOMERS! ";
+            CustomersInfo += " YOU HAVE  " + --i + " CUSTOMERS! ";
         }
         return CustomersInfo;
     }

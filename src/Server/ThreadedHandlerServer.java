@@ -23,8 +23,12 @@ public class ThreadedHandlerServer implements Runnable {
         this.serverWindow = serverWindow;
 
     }
+      public ThreadedHandlerServer(Socket client) {
+        this.client = client;
+        
 
-    public void run() {
+    }
+  public void run() {
 
         try {
             InputStream inStream = client.getInputStream();

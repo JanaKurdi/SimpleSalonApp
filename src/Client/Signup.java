@@ -40,7 +40,7 @@ public class Signup extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         signup = new javax.swing.JButton();
         login = new javax.swing.JButton();
-        Lname = new javax.swing.JLabel();
+        lable2 = new javax.swing.JLabel();
         FName = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
@@ -121,8 +121,8 @@ public class Signup extends javax.swing.JFrame {
             }
         });
 
-        Lname.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        Lname.setText("Last Name");
+        lable2.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        lable2.setText("Last Name");
 
         FName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204), 2));
         FName.addActionListener(new java.awt.event.ActionListener() {
@@ -169,7 +169,7 @@ public class Signup extends javax.swing.JFrame {
                                 .addComponent(jLabel7)
                                 .addComponent(jLabel8)
                                 .addComponent(jLabel9)
-                                .addComponent(Lname)
+                                .addComponent(lable2)
                                 .addComponent(LName)
                                 .addComponent(FName)))))
                 .addContainerGap(55, Short.MAX_VALUE))
@@ -186,7 +186,7 @@ public class Signup extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Lname)
+                .addComponent(lable2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -327,7 +327,6 @@ public class Signup extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField FName;
     private javax.swing.JTextField LName;
-    private javax.swing.JLabel Lname;
     private javax.swing.JTextField PhoneNo;
     private javax.swing.JTextField address;
     private javax.swing.JPasswordField confirmPass;
@@ -343,6 +342,7 @@ public class Signup extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lable2;
     private javax.swing.JButton login;
     private javax.swing.JPasswordField pass;
     private javax.swing.JButton signup;

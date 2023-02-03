@@ -1,5 +1,6 @@
 package Client;
 
+import DB.Database;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -70,12 +71,14 @@ public String getPassword() {
 
     public static Customer createAccount(String FName, String LName, String password, String PhoneNo, String Email, String address) throws ExsistedAccountException {
         IOFile file = new IOFile();
-        if (file.checkExistence(PhoneNo)) {
+        Database db=new Database();
+        if (file.checkExistence(PhoneNo) && db.checkifExist(PhoneNo) ) {
             throw new ExsistedAccountException();
         } else {
             try {
                 PrintWriter pw = new PrintWriter(new FileOutputStream(new File("Customer.txt"), true));
                 pw.println(FName + "," + LName + "," + password + "," + PhoneNo + "," + Email + "," + address);
+                db.insertRecord(FName, LName, password, PhoneNo, Email, address);
                 pw.close();
             } catch (FileNotFoundException ex) {
                 System.out.println(ex.getMessage());

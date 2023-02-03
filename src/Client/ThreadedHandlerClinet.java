@@ -22,6 +22,8 @@ public class ThreadedHandlerClinet implements Runnable {
         this.client = client;
         this.clientWindow = clientWindow;
     }
+    
+    
 
     public void run() {
 

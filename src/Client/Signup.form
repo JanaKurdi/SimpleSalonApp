@@ -85,7 +85,7 @@
                                   <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Lname" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lable2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="LName" alignment="0" max="32767" attributes="0"/>
                                   <Component id="FName" alignment="0" max="32767" attributes="0"/>
                               </Group>
@@ -108,7 +108,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="FName" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Lname" min="-2" max="-2" attributes="0"/>
+                  <Component id="lable2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="LName" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -305,7 +305,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="Lname">
+        <Component class="javax.swing.JLabel" name="lable2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Helvetica Neue" size="14" style="0"/>
