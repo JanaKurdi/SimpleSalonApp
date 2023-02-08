@@ -312,6 +312,7 @@ public class Services extends javax.swing.JFrame {
         // TODO add your handling code here:
         new clientWindow(cs).setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

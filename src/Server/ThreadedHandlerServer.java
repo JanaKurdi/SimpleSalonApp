@@ -63,4 +63,21 @@ public class ThreadedHandlerServer implements Runnable {
             done = true;
         }
     }
+//    private void showMessageToAllClients(Socket sender, String outputString) {
+//        Socket socket;
+//        PrintWriter printWriter;
+//        int i = 0;
+//        while (i < clients.size()) {
+//            socket = clients.get(i);
+//            i++;
+//            try {
+//                if (socket != sender) {
+//                    printWriter = new PrintWriter(socket.getOutputStream(), true);
+//                    printWriter.println(outputString);
+//                }
+//            } catch (IOException ex) {
+//                System.out.println(ex);
+//            }
+//        }
+//    }
 }

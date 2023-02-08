@@ -17,12 +17,14 @@ public class serverWindow extends javax.swing.JFrame {
 
     private String ClientName = " ";
     private Socket client;
-    private ThreadedHandlerServer  ThreadedHandlerServer;
-    
+    private ThreadedHandlerServer ThreadedHandlerServer;
+
     public serverWindow(Socket client) {
         this.client = client;
-        ThreadedHandlerServer = new ThreadedHandlerServer(client, this);
-        new Thread(ThreadedHandlerServer).start();
+        synchronized (client) {
+            ThreadedHandlerServer = new ThreadedHandlerServer(client, this);
+            new Thread(ThreadedHandlerServer).start();
+        }
         initComponents();
     }
 
@@ -141,7 +143,18 @@ public class serverWindow extends javax.swing.JFrame {
 
     }//GEN-LAST:event_SendButtonActionPerformed
 
-
+    public static void main(String[] args) {
+        try (ServerSocket s = new ServerSocket(8189);) {
+            System.out.println("Server started waiting for clients !!");
+            Socket client;
+            while (true) {
+                client = s.accept();
+                new serverWindow(client).setVisible(true);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void addClientText(String text) {
         ServerArea.append(ClientName + ": " + text + "\n");
@@ -150,6 +163,8 @@ public class serverWindow extends javax.swing.JFrame {
     public void setClientName(String name) {
         this.ClientName = name;
     }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private static javax.swing.JTextField Message;
     private javax.swing.JButton SendButton;
