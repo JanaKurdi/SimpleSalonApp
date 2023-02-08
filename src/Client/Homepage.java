@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author Razan Alshaikh
+ * @author Razan Alshaikh & mac 
  */
 public class Homepage extends javax.swing.JFrame {
 

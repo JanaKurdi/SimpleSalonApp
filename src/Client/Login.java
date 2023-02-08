@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author mac
+ * @author mac 
  */
 public class Login extends javax.swing.JFrame {
   private static Customer customer;
